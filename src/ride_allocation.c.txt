@@ -1,0 +1,81 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+typedef struct RideRequest {
+    int id;
+    char passenger[50];
+    struct RideRequest* next;
+} RideRequest;
+
+RideRequest* front = NULL;
+RideRequest* rear = NULL;
+
+void enqueue(int id, char name[]) {
+
+    RideRequest* newNode = (RideRequest*) malloc(sizeof(RideRequest));
+
+    newNode->id = id;
+    strcpy(newNode->passenger, name);
+    newNode->next = NULL;
+
+    if(rear == NULL) {
+        front = rear = newNode;
+        return;
+    }
+
+    rear->next = newNode;
+    rear = newNode;
+}
+
+void dequeue() {
+
+    if(front == NULL) {
+        printf("No ride requests in queue\n");
+        return;
+    }
+
+    RideRequest* temp = front;
+
+    printf("Assigning ride to: %s\n", temp->passenger);
+
+    front = front->next;
+
+    if(front == NULL)
+        rear = NULL;
+
+    free(temp);
+}
+
+void display() {
+
+    RideRequest* temp = front;
+
+    if(temp == NULL) {
+        printf("Queue is empty\n");
+        return;
+    }
+
+    printf("\nRide Queue:\n");
+
+    while(temp != NULL) {
+        printf("ID: %d Passenger: %s\n", temp->id, temp->passenger);
+        temp = temp->next;
+    }
+}
+
+int main() {
+
+    enqueue(1, "Alice");
+    enqueue(2, "Bob");
+    enqueue(3, "Charlie");
+
+    display();
+
+    dequeue();
+    dequeue();
+
+    display();
+
+    return 0;
+}
