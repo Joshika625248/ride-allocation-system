@@ -37,7 +37,8 @@ function updateQueue(){
     rideQueue.forEach(ride => {
 
         let li = document.createElement("li")
-        li.textContent = ride.rideId + " - " + ride.passenger
+        li.innerHTML = "<strong>Ride:</strong> " + ride.rideId +
+                       " | <strong>Passenger:</strong> " + ride.passenger
 
         list.appendChild(li)
     })
