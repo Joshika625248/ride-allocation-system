@@ -11,6 +11,8 @@ function addRide(){
     }
 
     rideQueue.push({rideId, passenger})
+    document.getElementById("rideId").value = ""
+    document.getElementById("passenger").value = ""
 
     updateQueue()
 }
