@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ride Allocation System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h1>Ride Allocation Dashboard</h1>
+
+<div class="container">
+
+    <h2>Add Ride Request</h2>
+    <input type="text" id="rideId" placeholder="Ride ID">
+    <input type="text" id="passenger" placeholder="Passenger Name">
+    <button onclick="addRide()">Add Ride</button>
+
+    <h2>Waiting Queue</h2>
+    <ul id="queue"></ul>
+
+    <button onclick="assignRide()">Assign Ride</button>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

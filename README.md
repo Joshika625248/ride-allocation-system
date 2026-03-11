@@ -1,26 +1,8 @@
-# On-Demand Ride Allocation System
+## UI Demo
 
-A queue-based ride assignment system implemented in C using singly linked lists.
+The system includes a simple dashboard that simulates ride request management.
 
-## Features
-
-- Queue-based ride request handling
-- O(1) enqueue and dequeue operations
-- Dynamic memory allocation using malloc and free
-- Proper memory management
-- Edge case handling for empty queues
-
-## Technologies
-
-C Programming
-Data Structures (Queue using Linked List)
-
-## Run
-
-Compile:
-
-gcc src/ride_allocation.c -o ride
-
-Run:
-
-./ride
+Features:
+- Add ride request
+- Queue visualization
+- Driver assignment simulation
